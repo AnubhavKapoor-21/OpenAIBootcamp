@@ -1,0 +1,29 @@
+{
+    # First we get the full transcription
+    "text": " Hi guys, this is just a quick test audio file for you. Let's see how well it does and if my speech is recognized and converted to text properly. I'm really excited to see how well this works and I hope that it will be a good test for you guys to see how well the whisper model works.",
+    # Now we have the list of segments
+    "segments": [
+        {
+            "id": 0,
+            "seek": 0,
+            # Start and end times in seconds
+            "start": 0.0,
+            "end": 3.52,
+            "text": " Hi guys, this is just a quick test audio file for you.",
+            # list of tokenized words from the transcription, where each word is represented by a unique number
+            "tokens": [ 50363, 15902, 3730, 11, 428, 318, 655, 257, 2068, 1332, 6597, 2393, 329, 345, 13, 50539 ],
+            "temperature": 0.0,
+            # In the context of machine learning, temperature is a parameter that controls the randomness of predictions. A temperature of 0.0 suggests no randomness, or the model always selecting the tokens(words) with the highest probability (This is similar to the ChatGPT API temperature setting). You can pass a temperature value to the transcribe function when calling it if you want to introduce more randomness into your generations.
+            # For instance: model.transcribe(audio_file, temperature=0.2)
+            "avg_logprob": -0.1399546700554925,
+            # The average log probability of the tokens in the segment. The closer to 0 the better, which means if the numbers get more negative, like -0.2 for instance, it means it's much less confident in it's transcription (and there are probably more errors).
+            "compression_ratio": 1.5898876404494382,
+            "no_speech_prob": 0.0045762090012431145,
+            # Represents the probability that the segment contains no speech. We can see that it is very low.
+        },
+        {
+            '... more segments with the same structure as above, cut for brevity ...'
+        },
+    ],
+    "language": "en",
+}
